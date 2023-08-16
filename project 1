@@ -1,0 +1,38 @@
+
+import java.util.*;
+public class project_1 {
+   public static void guessTheNO() {
+      Scanner sc = new Scanner(System.in);
+      int myNo = 4;
+      int count = 10;
+      int count2 = 10;
+      
+      for (int i = 1; i <= count; i++) {
+
+         System.out.println("CHANCES LEFT : " + count2);
+         System.out.print("enter the number you are guessing : ");
+         int no = sc.nextInt();
+         System.out.println();
+
+         if (no == myNo) {
+            System.out.println("congratulations!!! you are RIGHT ");
+            System.out.println("Your Score is : " + (count2 * 10));
+            break;
+         } else if (no < myNo && i != count) {
+            count2--;
+            System.out.println("The No. Is GREATER Than " + no);
+         } else if (no > myNo && i != count) {
+            count2--;
+            System.out.println("The No. Is SMALLER Than " + no);
+         } else if (i == count) {
+            System.out.println("OUT OF ATTEMPTS !!! ");
+            System.out.println("THE CORRECT ANS WAS : " + myNo);
+            System.out.println("BETTER LUCK NEXT TIME");
+
+         }
+      }
+   }
+   public static void main(String[] args) {
+      guessTheNO();
+   }
+}
